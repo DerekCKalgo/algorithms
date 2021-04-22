@@ -1,0 +1,85 @@
+function removeb(a)
+{
+    wordarray=[];
+    wordarray=a.split(" ");
+    console.log(wordarray)
+    newstring=wordarray.join("");
+    return newstring;
+}
+callthis=removeb("Pl ayTha tF u nkyM usi c")
+console.log(callthis)
+
+function getdig(a)
+{
+    wordarray=[];
+    wordarray=a.split("");
+    digitarray=[];
+    var i;
+    for(i=0; i<wordarray.length; i++)
+    {
+        if(wordarray[i]>=0 && wordarray[i]<=9)
+        {
+            digitarray.push(wordarray[i]);
+        }
+    }
+    digitstring=digitarray.join("");
+    return digitstring;
+}
+callthis=getdig("0s1a3y5w7h9a2t4?6!8?0")
+console.log(callthis)
+
+function acron(a)
+{
+    wordarray=[];
+    wordarray=a.split(" ");
+    console.log(wordarray)
+    digitarray=[];
+    var i;
+    for(i=0; i<wordarray.length; i++)
+    {
+        digitarray.push(wordarray[i][0]);
+    }
+    digitstring=digitarray.join("");
+    return digitstring.toUpperCase();
+}
+callthis=acron("there's no free lunch - gotta pay yer way.")
+console.log(callthis)
+
+function countns(a)
+{
+    wordarray=[];
+    wordarray=a.split("");
+    console.log(wordarray)
+    var i;
+    var count=0;
+    for(i=0; i<wordarray.length; i++)
+    {
+        if(wordarray[i]!=" ")
+        {
+            count++;
+        }
+    }
+    return count;
+}
+callthis=countns("Honey pie, you are driving me crazy")
+console.log(callthis)
+
+function removess(a, b)
+{
+    wordarray=[];
+    wordarray=a.split(" ");
+    console.log(wordarray)
+    var i;
+    var count=0;
+    newarray=[];
+    for(i=0; i<wordarray.length; i++)
+    {
+        if(wordarray[i].length>=b)
+        {
+            newarray.push(wordarray[i]);
+        }
+    }
+    return newarray;
+}
+callthis=removess("Honey pie, you are driving me crazy", 4)
+console.log(callthis)

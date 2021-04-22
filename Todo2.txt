@@ -1,0 +1,118 @@
+function reverse(a)
+{
+    var i=0;
+    var count=0;
+    while(a[i]!=null)
+    {
+        count++;
+        i++;
+    }
+    var j;
+    var temp;
+    for(j=0; j<(count/2); j++)
+    {
+        temp=a[j];
+        a[j]=a[count-1-j];
+        a[count-1-j]=temp;
+    }
+    return a;
+}
+callthis=reverse([3, -5, 8, 9])
+console.log(callthis)
+
+function filter(a, b, c)
+{
+    var i=0;
+    var count=0;
+    while(a[i]!=null)
+    {
+        count++;
+        i++;
+    }
+    var j;
+    newar=[];
+    var k=0;
+    for(j=0; j<count; j++)
+    {
+        if(a[j]>b && a[j]<c)
+        {
+            newar[k]=a[j];
+            k++;
+        }
+    }
+    return newar;
+}
+callthis=filter([3, -5, 8, 9, 10, 33, -10, 39, 41, 1000, 4, -90], 3, 40)
+console.log(callthis)
+
+function concat(a, b)
+{
+    var i=0;
+    var count=0;
+    while(a[i]!=null)
+    {
+        count++;
+        i++;
+    }
+    var j=0;
+    var count2=0;
+    while(b[j]!=null)
+    {
+        count2++;
+        j++;
+    }
+    newar=[];
+    var k;
+    for(k=0; k<count; k++)
+    {
+        newar.push(a[k]);
+    }
+    var l;
+    for(l=0; l<count2; l++)
+    {
+        newar.push(b[l]);
+    }
+    return newar;
+}
+callthis=concat([3, -5, 8, 9, 10, 33, -10, 39, 41, 1000, 4, -90], [3, 242, 535, 1000, 300, -99])
+console.log(callthis)
+
+function rotate(a, b)
+{
+    var i=0;
+    var count=0;
+    while(a[i]!=null)
+    {
+        count++;
+        i++;
+    }
+    t=Math.abs(b);
+    var temp;
+    var j;
+    var k;
+    while(t>0)
+    {
+        if(b>0)
+        {
+            temp=a[count-1];
+            for(j=count-1; j>0; j--)
+            {
+                a[j]=a[j-1];
+            }
+            a[0]=temp;
+        }
+        else
+        {
+            temp=a[0];
+            for(k=0; k<count; k++)
+            {
+                a[k]=a[k+1];
+            }
+            a[count-1]=temp;
+        }
+        t--;
+    }
+    return a;
+}
+callthis=rotate([3, -5, 8, 9, 10, 33, -10], 6)
+console.log(callthis)
