@@ -1,26 +1,13 @@
-function selections(a){
-    var i;
-    var j;
-    var index;
-    var temp;
-    for(i=0; i<a.length-1; i++){
-        var min=a[i];
-        var count=0;
-        for(j=i; j<a.length; j++){
-            if(a[j]<min){
-                min=a[j];
-                index=j;
-                count++;
-            }
-        }
-        if(count>0){
-            temp=a[index];
-            a[index]=a[i];            
-            a[i]=temp;
-        }
+var StackModel = Backbone.Model.extend({
+    defaults: {
+        title: null,
+        instructor: null,
+        language: null
+    },
+    initialize: function(){
+        this.instructor="Michael Choi";
     }
-    return a;
-}
-
-b=selections([7, 6, 5, 9, 8, 3, 2, 1, 14, 88, 0, -2, 1000, 4])
-console.log(b)
+});
+var stack1 = new StackModel();
+stack1.set("title", "MERN");
+console.log(stack1);

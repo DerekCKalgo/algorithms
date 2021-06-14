@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backbone Setup</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <script src ="jquery-3.6.0.js"></script>
+    <script src ="underscore-umd-min .js"></script>
+    <script src ="backbone-min.js"></script>
+<script>
+var StarshipModel = Backbone.Model.extend({
+    defaults:{
+        name: null,
+        manufacturer: null,
+        crew: null,
+        cost_in_credits: null,
+        url: null
+    }
+});
+var StarshipCollection = Backbone.Collection.extend({
+    model: StarshipModel,
+    url: "https://swapi.dev/api/starships",
+    parse: function(ships){
+        return ships.results;
+    }
+});
+var starships = new StarshipCollection();
+starships.fetch().then(function(){
+    _.each(starships, function(element, index){
+        
+        
+        console.log(index);
+        element=starships.models[index];
+        console.log(element);
+        ship=new StarshipModel();
+        ship=element;
+        console.log(ship);
+        var x=ship.get("name");
+        if(x=="Millennium Falcon"){
+            ship.set("cost_in_credits", "priceless");
+        }
+});
+console.log(starships)
+
+
+});
+
+</script>
+</body>
+</html>
+
