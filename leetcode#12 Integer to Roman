@@ -1,0 +1,172 @@
+function j(a){
+    var output=[];
+    var input=[];
+    input=a.toString();
+    var i;
+    if (input.length==4){
+        for(i=0; i<input.length; i++){
+            if (i==0 && input[i]>=1 && input[i]<4){
+                output.push('M'.repeat(input[i]));
+            }
+            else if (i==1 && input[i]>=1 && input[i]<4){
+                output.push('C'.repeat(input[i]));
+            }
+            else if(i==1 && input[i]==4){
+                output.push('CD');
+            }
+            else if(i==1 && input[i]==5){
+                output.push('D');
+            }
+            else if(i==1 && input[i]>5 && input[i]<=8){
+                output.push('D');
+                output.push('C'.repeat(input[i]-5));
+            }
+            else if(i==1 && input[i]==9){
+                output.push('CM');
+            }
+            else if (i==2 && input[i]>=1 && input[i]<4){
+                output.push('X'.repeat(input[i]));
+            }
+            else if(i==2 && input[i]==4){
+                output.push('XL');
+            }
+            else if(i==2 && input[i]==5){
+                output.push('L');
+            }
+            else if(i==2 && input[i]>5 && input[i]<=8){
+                output.push('L');
+                output.push('X'.repeat(input[i]-5));
+            }
+            else if(i==2 && input[i]==9){
+                output.push('XC');
+            }
+            else if (i==3 && input[i]>=1 && input[i]<4){
+                output.push('I'.repeat(input[i]));
+            }
+            else if(i==3 && input[i]==4){
+                output.push('IV');
+            }
+            else if(i==3 && input[i]==5){
+                output.push('V');
+            }
+            else if(i==3 && input[i]>5 && input[i]<=8){
+                output.push('V');
+                output.push('I'.repeat(input[i]-5));
+            }
+            else if(i==3 && input[i]==9){
+                output.push('IX');
+            }
+        }
+    }
+    else if (input.length==3){
+        for(i=0; i<input.length; i++){
+            if (i==0 && input[i]>=1 && input[i]<4){
+                output.push('C'.repeat(input[i]));
+            }
+            else if(i==0 && input[i]==4){
+                output.push('CD');
+            }
+            else if(i==0 && input[i]==5){
+                output.push('D');
+            }
+            else if(i==0 && input[i]>5 && input[i]<=8){
+                output.push('D');
+                output.push('C'.repeat(input[i]-5));
+            }
+            else if(i==0 && input[i]==9){
+                output.push('CM');
+            }
+            else if (i==1 && input[i]>=1 && input[i]<4){
+                output.push('X'.repeat(input[i]));
+            }
+            else if(i==1 && input[i]==4){
+                output.push('XL');
+            }
+            else if(i==1 && input[i]==5){
+                output.push('L');
+            }
+            else if(i==1 && input[i]>5 && input[i]<=8){
+                output.push('L');
+                output.push('X'.repeat(input[i]-5));
+            }
+            else if(i==1 && input[i]==9){
+                output.push('XC');
+            }
+            else if (i==2 && input[i]>=1 && input[i]<4){
+                output.push('I'.repeat(input[i]));
+            }
+            else if(i==2 && input[i]==4){
+                output.push('IV');
+            }
+            else if(i==2 && input[i]==5){
+                output.push('V');
+            }
+            else if(i==2 && input[i]>5 && input[i]<=8){
+                output.push('V');
+                output.push('I'.repeat(input[i]-5));
+            }
+            else if(i==2 && input[i]==9){
+                output.push('IX');
+            }
+        }
+    }
+    else if (input.length==2){
+        for(i=0; i<input.length; i++){
+            if (i==0 && input[i]>=1 && input[i]<4){
+                output.push('X'.repeat(input[i]));
+            }
+            else if(i==0 && input[i]==4){
+                output.push('XL');
+            }
+            else if(i==0 && input[i]==5){
+                output.push('L');
+            }
+            else if(i==0 && input[i]>5 && input[i]<=8){
+                output.push('L');
+                output.push('X'.repeat(input[i]-5));
+            }
+            else if(i==0 && input[i]==9){
+                output.push('XC');
+            }
+            else if (i==1 && input[i]>=1 && input[i]<4){
+                output.push('I'.repeat(input[i]));
+            }
+            else if(i==1 && input[i]==4){
+                output.push('IV');
+            }
+            else if(i==1 && input[i]==5){
+                output.push('V');
+            }
+            else if(i==1 && input[i]>5 && input[i]<=8){
+                output.push('V');
+                output.push('I'.repeat(input[i]-5));
+            }
+            else if(i==1 && input[i]==9){
+                output.push('IX');
+            }
+        }
+        }
+    else if (input.length==1){
+        for(i=0; i<input.length; i++){
+        if (input[i]>=1 && input[i]<4){
+            output.push('I'.repeat(input[i]));
+        }
+        else if(input[i]==4){
+            output.push('IV');
+        }
+        else if(input[i]==5){
+            output.push('V');
+        }
+        else if(input[i]>5 && input[i]<=8){
+            output.push('V');
+            output.push('I'.repeat(input[i]-5));
+        }
+        else if(input[i]==9){
+            output.push('IX');
+        }
+    }
+    }
+    return output.join('');
+}
+b=j(1998)
+console.log(b)
