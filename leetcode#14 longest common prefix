@@ -1,0 +1,17 @@
+function j(a){
+    var i;
+    var j;
+    var str="";
+    for(j=0; j<a[1].length; j++){
+    for(i=0; i<a.length-1; i++){
+        if(a[i][j]!=a[i+1][j]){
+            return str;
+        }
+    }
+    str+=a[i][j];
+}
+return str;
+}
+
+b=j(["young", "younger", "youngblood"])
+console.log(b)
