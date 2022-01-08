@@ -1,0 +1,23 @@
+function j(a, b){
+    var i;
+    var j;
+    var k;
+    var diff=Math.abs((a[0]+a[1]+a[2])-b);
+    var arr=[];
+    arr.push(a[0], a[1], a[2]);
+    for(i=0; i<a.length-2; i++){
+        for(j=i+1; j<a.length-1; j++){
+            for(k=j+1; k<a.length; k++){
+                if(Math.abs((a[i]+a[j]+a[k])-b)<diff){
+                        diff=Math.abs((a[i]+a[j]+a[k])-b);
+                        arr.length=0;
+                        arr.push(a[i], a[j], a[k]);
+                        }
+                    }
+                    }
+                }
+                return arr;
+    }
+
+b=j([-1, 0, 1, 2], 0)
+console.log(b)
