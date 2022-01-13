@@ -1,0 +1,98 @@
+function j(a){
+    var i;
+    var j;
+    var k;
+    var l;
+    var m;
+    var arr=[];
+    var arrn=0;
+    var phonearr=[];
+    for(i=0; i<a.length; i++){
+        if(a[i]==2){
+            arr[arrn]=[];
+            arr[arrn].push("a", "b", "c");
+            arrn++;
+        }
+        else if(a[i]==3){
+            arr[arrn]=[];
+            arr[arrn].push("d", "e", "f");
+            arrn++;
+        }
+        else if(a[i]==4){
+            arr[arrn]=[];
+            arr[arrn].push("g", "h", "i");
+            arrn++;
+        }
+        else if(a[i]==5){
+            arr[arrn]=[];
+            arr[arrn].push("j", "k", "l");
+            arrn++;
+        }
+        else if(a[i]==6){
+            arr[arrn]=[];
+            arr[arrn].push("m", "n", "o");
+            arrn++;
+        }
+        else if(a[i]==7){
+            arr[arrn]=[];
+            arr[arrn].push("p", "q", "r", "s");
+            arrn++;
+        }
+        else if(a[i]==8){
+            arr[arrn]=[];
+            arr[arrn].push("t", "u", "v");
+            arrn++;
+        }
+        else if(a[i]==9){
+            arr[arrn]=[];
+            arr[arrn].push("w", "x", "y", "z");
+            arrn++;
+        }
+    }
+    console.log(arr);
+    var phone=0;
+    if(arr.length==0){
+        return phonearr;
+    }
+    else if(arr.length==1){
+        phonearr=arr;
+        return phonearr;
+    }
+    else if(arr.length==2){
+        for(j=0; j<arr[0].length; j++)
+            for(k=0; k<arr[1].length; k++){
+                phonearr[phone]=[];
+                phonearr[phone].push(arr[0][j]);
+                phonearr[phone].push(arr[1][k]);
+                phone++;
+            }
+    }
+    else if(arr.length==3){
+        for(j=0; j<arr[0].length; j++)
+            for(k=0; k<arr[1].length; k++)
+                for(l=0; l<arr[2].length; l++){
+                phonearr[phone]=[];
+                phonearr[phone].push(arr[0][j]);
+                phonearr[phone].push(arr[1][k]);
+                phonearr[phone].push(arr[2][l]);
+                phone++;
+        }
+    }
+    else if(arr.length==4){
+        for(j=0; j<arr[0].length; j++)
+            for(k=0; k<arr[1].length; k++)
+                for(l=0; l<arr[2].length; l++)
+                    for(m=0; m<arr[3].length; m++){
+                        phonearr[phone]=[];
+                        phonearr[phone].push(arr[0][j]);
+                        phonearr[phone].push(arr[1][k]);
+                        phonearr[phone].push(arr[2][l]);
+                        phonearr[phone].push(arr[3][m]);
+                        phone++;
+            }
+    }
+    return phonearr;
+    }
+
+b=j([2, 3, 4, 9])
+console.log(b)
